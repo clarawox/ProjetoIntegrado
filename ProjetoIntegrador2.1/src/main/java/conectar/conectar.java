@@ -24,7 +24,7 @@ public class conectar {
 
     public void InsereCliente(Connection con, String nome, String cpf, String cel, String end, String email, String senha) {
         try {
-            String sql = "INSERT INTO cliente (nome, cpf, endereco, cel, email, senha) VALUES (?, ?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO clientes (nome, email, endereco, senha) VALUES (?, ?, ?, ?, ?, ?)";
             PreparedStatement pstm = con.prepareStatement(sql);
 
             pstm.setString(1, nome);
@@ -33,6 +33,21 @@ public class conectar {
             pstm.setString(4, cel);
             pstm.setString(5, email);
             pstm.setString(6, senha);
+            pstm.execute();
+        } catch (Exception e) {
+            System.out.println("Erro ao inserir " + e);
+        }
+    }
+
+    public void InsereClientes(Connection con, String nome, String email, String end, String senha) {
+        try {
+            String sql = "INSERT INTO clientes (nome, email, endereco, senha) VALUES (?, ?, ?, ?)";
+            PreparedStatement pstm = con.prepareStatement(sql);
+
+            pstm.setString(1, nome);
+            pstm.setString(2, end);
+            pstm.setString(3, email);
+            pstm.setString(4, senha);
             pstm.execute();
         } catch (Exception e) {
             System.out.println("Erro ao inserir " + e);
@@ -51,6 +66,26 @@ public class conectar {
             System.out.println("O erro é: " + e);
             return false;
         }
+    }
+
+    public static String pegarNome(Connection con, String email) {
+        String nome = "";
+        String sql = "Select nome from clientes where email=?";
+        PreparedStatement preparedStmt;
+        
+        try {
+           PreparedStatement pstm = con.prepareStatement(sql);
+           pstm.setString(1, email);
+           ResultSet result = pstm.executeQuery();
+            
+           while(result.next()){
+               nome = result.getString("nome");
+               System.out.println(nome);
+           }
+        } catch (Exception e) {
+            System.out.println("O erro é: " + e);
+        }
+        return nome;
     }
 
     public void closeConnectionMySql(Connection con) {

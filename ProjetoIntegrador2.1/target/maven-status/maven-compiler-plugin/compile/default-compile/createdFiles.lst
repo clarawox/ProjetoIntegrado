@@ -1,1 +1,4 @@
-ProjetoIntegrador21\ProjetoIntegrador21\Application.class
+springBancoSQL\Application.class
+springBancoSQL\WebController.class
+conectarMongo\conectarMongo.class
+conectar\conectar.class
