@@ -41,13 +41,13 @@ public class conectar {
 
     public void InsereClientes(Connection con, String nome, String email, String end, String senha) {
         try {
-            String sql = "INSERT INTO clientes (nome, email, endereco, senha) VALUES (?, ?, ?, ?)";
+            String sql = "INSERT INTO clientes (nome, email, senha, endereco) VALUES (?, ?, ?, ?)";
             PreparedStatement pstm = con.prepareStatement(sql);
 
             pstm.setString(1, nome);
-            pstm.setString(2, end);
-            pstm.setString(3, email);
-            pstm.setString(4, senha);
+            pstm.setString(2, email);
+            pstm.setString(3, senha);
+            pstm.setString(4, end);
             pstm.execute();
         } catch (Exception e) {
             System.out.println("Erro ao inserir " + e);
@@ -70,7 +70,7 @@ public class conectar {
 
     public static String pegarNome(Connection con, String email) {
         String nome = "";
-        String sql = "Select nome from clientes where email=?";
+        String sql = "Select nome from clientes where email = ?";
         PreparedStatement preparedStmt;
         
         try {

@@ -55,8 +55,7 @@
                             <li>
                                 <a href="contato.html">Contato</a>
                             </li>
-                            
-                            <p th:text="${mensagem3}"></p> 
+                           
                         </ul>
 
                     </div>
@@ -77,13 +76,14 @@
                         <div class="card-body">
                             <form action="respostaLogin" method="post">
                                 <div class="form-group">
-                                    <input name="email" id="email" type="email" class="form-control" placeholder="E-mail">
+                                    <input required name="email" id="email" type="email" class="form-control" placeholder="E-mail">
                                 </div>
                                 <div class="form-group">
-                                    <input name="senha" id="senha" type="password" class="form-control" placeholder="Senha">
+                                    <input required name="senha" id="senha" type="password" class="form-control" placeholder="Senha">
                                 </div>
                                 <button class="btn btn-lg btn-rosa btn-block text-white" type="submit" value="login">Login</button>
                                 <a href="cadastro.html" class="btn btn-lg btn-rosa btn-block">Não tenho login ainda</a>
+                                <br> <a>
                             </form>
                         </div>
                     </div>

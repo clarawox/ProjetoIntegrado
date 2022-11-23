@@ -18,19 +18,14 @@ public class WebController {
         return "pedido";
     }
 
-    @RequestMapping(value = "/respostaPedido", method = RequestMethod.POST)
-    public String RespPedido(Model modelo, String nome, String cpf, String cel, String end, String email, String senha, String donut, String bebida, String desc, float valor) {
+    @RequestMapping(value = "/meus-pedidos", method = RequestMethod.POST)
+    public String RespPedido(Model modelo, String nome, String numero, String donut, String bebida, String desc, String endereco, float valor) {
         System.out.println("Resposta do pedido");
-        modelo.addAttribute("mensagem1", "Olá, " + nome);
-        conectar obj = new conectar();
-        Connection conexao = obj.connectionMySql();
-        obj.InsereCliente(conexao, nome, cpf, cel, end, email, senha);
-        obj.closeConnectionMySql(conexao);
-
-        conectarMongo con = new conectarMongo();
-        con.insertValues(nome, cel, donut, bebida, desc, valor);
-        con.getValues();
-        return "respostaPedido";
+        modelo.addAttribute("mensagem1", "Oi");
+        conectarMongo conm = new conectarMongo();
+        conm.insertValues(nome, numero, donut, bebida, desc, endereco, valor);
+        conm.getValues();
+        return "meus-pedidos";
     }
 
     @RequestMapping(value = "/fazerCadastro", method = RequestMethod.GET)
@@ -47,7 +42,7 @@ public class WebController {
             obj.closeConnectionMySql(conexao);
             return "login";
         } else {
-            
+            modelo.addAttribute("mensagem4", "As senhas não coincidem");
             return "cadastro";
         }
 
@@ -61,17 +56,20 @@ public class WebController {
 
     @RequestMapping(value = "/respostaLogin", method = RequestMethod.POST)
     public String respLogin(Model modelo, String email, String senha) {
-        conectar obj = new conectar();
-        Connection conexao = obj.connectionMySql();
-
-        boolean x = obj.logar(conexao, email, senha);
-
         
-        if (x == true) {
-            modelo.addAttribute("mensagem3", conectar.pegarNome(conexao, email));
+        conectar obj = new conectar();
+        Connection con = obj.connectionMySql();
+
+        boolean x = obj.logar(con, email, senha);
+        
+        if (x == false) {
+            modelo.addAttribute("mensagem31", "Uusário ou senha incorretos");
+            return "login";
         } else {
+            modelo.addAttribute("mensagem3", "Bem-vindo(a) " + conectar.pegarNome(con, email));
         }
-        obj.closeConnectionMySql(conexao);
+        
+        obj.closeConnectionMySql(con);
         return "index";
     }
 }

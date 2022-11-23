@@ -80,165 +80,168 @@
                         </div>
                     </div>
 
-                    <div class="row mb-3">
-                        <div class="col-md-2">
-                            <input type="text" class="form-control" placeholder="Digite seu nome" id="nome" />
+                    <form action="meus-pedidos" method="post">
+                        
+                        <div class="row mb-3">
+                            <div class="col-md-2">
+                                <input type="text" class="form-control" placeholder="Digite seu nome" id="Nome" name="Nome"/>
+                            </div>
+
+                            <div class="col-md-3">
+                                <input type="text" class="form-control" placeholder="Digite seu número" id="Numero" name="Numero"/>
+                            </div>
+
+                            <div class="col-md-3">
+                                <select class="form-control" id="Donut" name="Donut">
+                                    <option value="">Sabor do Donut</option>
+                                    <option value="1">Homer</option>
+                                    <option value="2">Chocolate</option>
+                                    <option value="3">Doce de Leite</option>
+                                    <option value="4">Leite Ninho</option>
+                                    <option value="5">Limão</option>
+                                    <option value="6">Recheado Chocolate</option>
+                                    <option value="7">Recheado Nutella</option>
+                                    <option value="8">Recheado Morango</option>
+                                    <option value="9">Recheado Goiabada</option>
+                                    <option value="10">Recheado Doce de Leite</option>
+                                    <option value="11">Recheado Leite Ninho</option>
+                                    <option value="12">Recheado Limão</option>
+                                    <option value="13">Recheado Red Velvet</option>
+                                    <option value="14">Especial Kit Kat</option>
+                                    <option value="15">Especial Oreo</option>
+                                    <option value="16">Especial Ovomaltine</option>
+                                    <option value="17">Especial M&#38;Ms</option>
+                                    <option value="18">Especial Napolitano</option>
+                                    <option value="19">Especial Paçoca</option>
+                                    <option value="20">Especial Galak</option>
+                                    <option value="21">Especial Kinder</option>
+                                    <option value="22">Especial Sensação</option>
+                                    <option value="23">Especial Torta de Limão</option>
+                                    <option value="24">Especial Mousse de Maracujá</option>
+                                    <option value="25">Não quero Donut</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-3">
+                                <select class="form-control" id="Bebida" name="Bebida">
+                                    <option value="">Tipo de Bebida</option>
+                                    <option value="1">Café Pequeno</option>
+                                    <option value="2">Café Médio</option>
+                                    <option value="3">Café Grande</option>
+                                    <option value="4">Cappuccino</option>
+                                    <option value="5">Cappuccino Europeu</option>
+                                    <option value="6">Chocolate Quente</option>
+                                    <option value="7">Frappuccino</option>
+                                    <option value="8">Água</option>
+                                    <option value="9">Água com Gás</option>
+                                    <option value="10">Coca-Cola</option>
+                                    <option value="11">Guaraná Antartica</option>
+                                    <option value="12">Chá Gelado</option>
+                                    <option value="13">Suco Natural</option>
+                                    <option value="14">Não quero Bebida</option>
+                                </select>
+                            </div>
                         </div>
 
-                        <div class="col-md-3">
-                            <input type="text" class="form-control" placeholder="Digite seu número" id="numero" />
-                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <input type="text" class="form-control" placeholder="Deseja remover algum ingediente?" id="Descrição" name="Descrição" />
+                            </div>
 
-                        <div class="col-md-3">
-                            <select class="form-control" id="donut">
-                                <option value="">Sabor do Donut</option>
-                                <option value="1">Morango</option>
-                                <option value="2">Chocolate</option>
-                                <option value="3">Doce de Leite</option>
-                                <option value="4">Leite Ninho</option>
-                                <option value="5">Limão</option>
-                                <option value="6">Recheado Chocolate</option>
-                                <option value="7">Recheado Nutella</option>
-                                <option value="8">Recheado Morango</option>
-                                <option value="9">Recheado Goiabada</option>
-                                <option value="10">Recheado Doce de Leite</option>
-                                <option value="11">Recheado Leite Ninho</option>
-                                <option value="12">Recheado Limão</option>
-                                <option value="13">Recheado Red Velvet</option>
-                                <option value="14">Especial Kit Kat</option>
-                                <option value="15">Especial Oreo</option>
-                                <option value="16">Especial Ovomaltine</option>
-                                <option value="17">Especial M&#38;Ms</option>
-                                <option value="18">Especial Napolitano</option>
-                                <option value="19">Especial Paçoca</option>
-                                <option value="20">Especial Galak</option>
-                                <option value="21">Especial Kinder</option>
-                                <option value="22">Especial Sensação</option>
-                                <option value="23">Especial Torta de Limão</option>
-                                <option value="24">Especial Mousse de Maracujá</option>
-                                <option value="25">Não quero Donut</option>
-                            </select>
-                        </div>
+                            <div class="col-md-4">
+                                <input type="text" class="form-control" placeholder="Digite o seu Endereço" id="Endereço" name="Endereço" />
+                            </div>
 
-                        <div class="col-md-3">
-                            <select class="form-control" id="bebida">
-                                <option value="">Tipo de Bebida</option>
-                                <option value="1">Café Pequeno</option>
-                                <option value="2">Café Médio</option>
-                                <option value="3">Café Grande</option>
-                                <option value="4">Cappuccino</option>
-                                <option value="5">Cappuccino Europeu</option>
-                                <option value="6">Chocolate Quente</option>
-                                <option value="7">Frappuccino</option>
-                                <option value="8">Água</option>
-                                <option value="9">Água com Gás</option>
-                                <option value="10">Coca-Cola</option>
-                                <option value="11">Guaraná Antartica</option>
-                                <option value="12">Chá Gelado</option>
-                                <option value="13">Suco Natural</option>
-                                <option value="14">Não quero Bebida</option>
-                            </select>
-                        </div>
-                    </div>
+                            <div class="col-md-2">
+                                <input type="text" class="form-control" placeholder="Valor" id="Valor" name="Valor"/>
+                            </div>
 
-                    <div class="row">
-                        <div class="col-md-4">
-                            <input type="text" class="form-control" placeholder="Deseja remover algum ingediente?" id="descricao" />
-                        </div>
-
-                        <div class="col-md-4">
-                            <input type="text" class="form-control" placeholder="Digite o seu Endereço" id="descricao" />
-                        </div>
-
-                        <div class="col-md-2">
-                            <input type="text" class="form-control" placeholder="Valor" id="valor" />
-                        </div>
-
-                        <div class="col-md-2 d-flex justify-content-end">
-                            <button type="button" class="btn btn-marrom" onclick="cadastrarDespesa()">
-                                <i class="fas fa-plus text-white"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-12 mt-3">
-                    <p>Cobramos uma taxa de entrega de R&#36;2,00</p>
-                </div>
-
-                <div class="col-md-12 mt-3">
-                    <button class="btn btn-marrom btn-custom"><a href="meus-pedidos.html">Ver Pedidos anteriores</a></button>
-                </div>
-
-                <!-- Modal -->
-                <div class="modal fade cor-texto" id="modalRegistraDespesa" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div id="modal_titulo_div">
-                                <h5 class="modal-title" id="modal_titulo"></h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
+                            <div class="col-md-2 d-flex justify-content-end">
+                                <h1 th:text="${mensagem}"></h1>
+                                <button type="submit" class="btn btn-marrom" value="meus-pedidos" onclick="cadastrarDespesa()">
+                                    <i class="fas fa-plus text-white"></i>
                                 </button>
                             </div>
-                            <div class="modal-body" id="modal_conteudo"></div>
-                            <div class="modal-footer">
-                                <button type="button" data-dismiss="modal" id="modal_btn">Voltar</button>
-                            </div>
+                         </div>
+                    </div>
+                </form>
+
+                        <div class="col-md-12 mt-3">
+                            <p>Cobramos uma taxa de entrega de R&#36;2,00</p>
+                        </div>
+
+                        <div class="col-md-12 mt-3">
+                            <button class="btn btn-marrom btn-custom"><a href="meus-pedidos.html">Ver Pedidos anteriores</a></button>
+                        </div>
+            <!-- Modal -->
+            <div class="modal fade cor-texto" id="modalRegistraDespesa" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div id="modal_titulo_div">
+                            <h5 class="modal-title" id="modal_titulo"></h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body" id="modal_conteudo"></div>
+                        <div class="modal-footer">
+                            <button type="button" data-dismiss="modal" id="modal_btn">Voltar</button>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
 
-        <footer id="rodape">
+    <footer id="rodape" style="position:absolute; bottom:0; width:100%;">
 
-            <div id="caixa-rodape">
-                <div class="container">
+        <div id="caixa-rodape">
+            <div class="container">
 
-                    <div class="row">
+                <div class="row">
 
-                        <div class="col-md-3">
-                            <a href="index.html">
-                                <img src="img/logo.png" width="100" height="129">
-                            </a>
-                        </div>
-
-                        <div class="col-md-3">
-                            <h4>DONUTS</h4>
-                            <ul class="navbar-nav">
-                                <li><a href="#">Simples</a></li>
-                                <li><a href="#">Recheados</a></li>
-                                <li><a href="#">Especiais</a></li>
-                            </ul>
-                        </div>
-
-                        <div class="col-md-3">
-                            <h4>BEBIDAS</h4>
-                            <ul class="navbar-nav">
-                                <li><a href="">Cafés</a></li>
-                                <li><a href="">Especiais</a></li>
-                                <li><a href="">Frias</a></li>
-                            </ul>
-                        </div>
-
-                        <div id="redes" class="col-md-3">
-                            <h4>REDES SOCIAIS</h4>
-                            <ul class="navbar-nav">
-                                <li><a href=""><i class="fa-brands fa-whatsapp fa-2x"></i></a></li>
-                                <li><a href="https://www.instagram.com/docesonhos_abc/"><i class="fa-brands fa-instagram fa-2x"></i></a></li>
-                                <li><a href=""><i class="fa-brands fa-facebook fa-2x"></i></a></li>
-                                <li><a href=""><i class="fa-brands fa-twitter fa-2x"></i></a></li>
-                            </ul>
-                        </div>
+                    <div class="col-md-3">
+                        <a href="index.html">
+                            <img src="img/logo.png" width="100" height="129">
+                        </a>
                     </div>
-                    
-                    <h6>
-                        &copy;Copyright Todos os Direitos por Doces Sonhos - 2022
-                    </h6>
-                    
+
+                    <div class="col-md-3">
+                        <h4>DONUTS</h4>
+                        <ul class="navbar-nav">
+                            <li><a href="#">Simples</a></li>
+                            <li><a href="#">Recheados</a></li>
+                            <li><a href="#">Especiais</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-3">
+                        <h4>BEBIDAS</h4>
+                        <ul class="navbar-nav">
+                            <li><a href="">Cafés</a></li>
+                            <li><a href="">Especiais</a></li>
+                            <li><a href="">Frias</a></li>
+                        </ul>
+                    </div>
+
+                    <div id="redes" class="col-md-3">
+                        <h4>REDES SOCIAIS</h4>
+                        <ul class="navbar-nav">
+                            <li><a href=""><i class="fa-brands fa-whatsapp fa-2x"></i></a></li>
+                            <li><a href="https://www.instagram.com/docesonhos_abc/"><i class="fa-brands fa-instagram fa-2x"></i></a></li>
+                            <li><a href=""><i class="fa-brands fa-facebook fa-2x"></i></a></li>
+                            <li><a href=""><i class="fa-brands fa-twitter fa-2x"></i></a></li>
+                        </ul>
+                    </div>
                 </div>
+
+                <h6>
+                    &copy;Copyright Todos os Direitos por Doces Sonhos - 2022
+                </h6>
+
             </div>
-        </footer>
-    </body>
+        </div>
+    </footer>
+</body>
 </html>

@@ -22,7 +22,7 @@ public class conectarMongo {
         }
     }
     
-    public void insertValues(String nome, String numero, String donut, String bebida, String desc, float valor){
+    public void insertValues(String nome, String numero, String donut, String bebida, String desc, String endereco, float valor){
         System.out.println("Insert values");
         String uri = "mongodb://localhost";
         MongoClient mongo = MongoClients.create(uri);
@@ -30,10 +30,11 @@ public class conectarMongo {
         MongoCollection<Document> docs = db.getCollection(collection);
         Document docBuilder = new Document();
         docBuilder.append("Nome", nome);
-        docBuilder.append("Numero", numero);
+        docBuilder.append("Número", numero);
         docBuilder.append("Donuts", donut);
         docBuilder.append("Bebida", bebida);
         docBuilder.append("Descrição", desc);
+        docBuilder.append("Endereço", endereco);
         docBuilder.append("Valor", valor);
         docs.insertOne(docBuilder);
     }
