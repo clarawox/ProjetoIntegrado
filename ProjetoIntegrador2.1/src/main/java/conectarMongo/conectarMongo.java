@@ -22,7 +22,7 @@ public class conectarMongo {
         }
     }
     
-    public void insertValues(String nome, String numero, String donut, String bebida, String desc, String endereco, float valor){
+    public void insertValues(String nome, String numero, String donut, String bebida, String desc, String endereco, String valor){
         System.out.println("Insert values");
         String uri = "mongodb://localhost";
         MongoClient mongo = MongoClients.create(uri);

@@ -22,23 +22,6 @@ public class conectar {
         return conexao_MySql;
     }
 
-    public void InsereCliente(Connection con, String nome, String cpf, String cel, String end, String email, String senha) {
-        try {
-            String sql = "INSERT INTO clientes (nome, email, endereco, senha) VALUES (?, ?, ?, ?, ?, ?)";
-            PreparedStatement pstm = con.prepareStatement(sql);
-
-            pstm.setString(1, nome);
-            pstm.setString(2, cpf);
-            pstm.setString(3, end);
-            pstm.setString(4, cel);
-            pstm.setString(5, email);
-            pstm.setString(6, senha);
-            pstm.execute();
-        } catch (Exception e) {
-            System.out.println("Erro ao inserir " + e);
-        }
-    }
-
     public void InsereClientes(Connection con, String nome, String email, String end, String senha) {
         try {
             String sql = "INSERT INTO clientes (nome, email, senha, endereco) VALUES (?, ?, ?, ?)";
@@ -56,12 +39,29 @@ public class conectar {
 
     public boolean logar(Connection con, String email, String senha) {
         try {
-            String sql = "select * from cliente where email=? and senha=?";
+            String sql = "select * from clientes where email=? and senha=?";
             PreparedStatement pstm = con.prepareStatement(sql);
-
+            boolean valor=false;
             pstm.setString(1, email);
             pstm.setString(2, senha);
-            return true;
+            ResultSet result = pstm.executeQuery();
+            
+            while(result.next()){
+                System.out.println("Teste email");
+               email = result.getString("email");
+               System.out.println(email);
+               valor = true;
+               
+            }
+               
+            if (valor==true){
+                return true;
+            } else{
+                return false;
+                
+            }
+            
+            
         } catch (Exception e) {
             System.out.println("O erro é: " + e);
             return false;

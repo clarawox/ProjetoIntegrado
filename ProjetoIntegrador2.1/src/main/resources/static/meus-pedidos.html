@@ -29,7 +29,7 @@
     <body id="meus-pedidos-fundo" onload="carregaListaDespesas()">
 
         <header id="cabecalho"><!--Início Cabeçalho-->
-
+            <h1 th:text="${mensagem1}"></h1>
             <nav id="nav-cabecalho" class="navbar navbar-expand-sm navbar-light">
                 <div class="container">
                     <a href="index.html" class="navbar-brand">
@@ -50,7 +50,7 @@
                                 <a href="cardapio.html">Cardápio</a>
                             </li>
                             <li>
-                                <a href="pedido.html">Pedido</a>
+                                <a href="pedido2.html">Pedido</a>
                             </li>
                             <li>
                                 <a href="sobre.html">Sobre</a>
@@ -70,7 +70,7 @@
 
         </header><!--Fim Cabeçalho-->
 
-        <section id="meus-pedidos">
+        <section id="smeus-pedidos">
             <div class="row mb-3">
                 <div class="col-md-2">
                     <input type="text" class="form-control" placeholder="Nome" id="nome" />

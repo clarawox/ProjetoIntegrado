@@ -47,7 +47,7 @@
                                 <a href="cardapio.html">Cardápio</a>
                             </li>
                             <li>
-                                <a href="pedido.html">Pedido</a>
+                                <a href="pedido2.html">Pedido</a>
                             </li>
                             <li>
                                 <a href="sobre.html">Sobre</a>
@@ -73,23 +73,23 @@
                             Cadastre-se
                         </div>
                         <div class="card-body">
-                            <form>
+                            <form action="fazerCadastro" method="get">
                                 <div class="form-group">
-                                    <input name="nome" type="text" class="form-control" placeholder="Digite seu Nome">
+                                    <input required name="nome" id="nome" type="text" class="form-control" placeholder="Digite seu Nome">
                                 </div>
                                 <div class="form-group">
-                                    <input name="email" type="email" class="form-control" placeholder="Digite seu E-mail">
+                                    <input name="email" required id="email" type="email" class="form-control" placeholder="Digite seu E-mail">
                                 </div>
                                 <div class="form-group">
-                                    <input name="endereco" type="text" class="form-control" placeholder="Digite seu Endereço">
+                                    <input required name="endereco" id="endereco" type="text" class="form-control" placeholder="Digite seu Endereço">
                                 </div>
                                 <div class="form-group">
-                                    <input name="senha" type="password" class="form-control" placeholder="Digite sua Senha">
+                                    <input required name="senha1" id="senha1" type="password" class="form-control" placeholder="Digite sua Senha">
                                 </div>
                                 <div class="form-group">
-                                    <input name="senha" type="password" class="form-control" placeholder="Confirme sua Senha">
+                                    <input required name="senha2" id="senha2" type="password" class="form-control" placeholder="Confirme sua Senha">
                                 </div>
-                                <a class="btn btn-lg btn-rosa btn-block text-white">Cadastrar</a>
+                                <button class="btn btn-lg btn-rosa btn-block text-white" type="submit" value="Cadastro">Cadastrar</button>
                                 <a href="login.html" class="btn btn-lg btn-rosa btn-block">Fazer Login</a>
                             </form>
                         </div>

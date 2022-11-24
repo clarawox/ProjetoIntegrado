@@ -49,7 +49,7 @@
                                 <a href="cardapio.html">Cardápio</a>
                             </li>
                             <li>
-                                <a href="pedido.html">Pedido</a>
+                                <a href="pedido">Pedido</a>
                             </li>
                             <li>
                                 <a href="sobre.html">Sobre</a>
@@ -80,7 +80,7 @@
                         </div>
                     </div>
 
-                    <form action="meus-pedidos" method="post">
+                    <form action="pedidos" method="get">
                         
                         <div class="row mb-3">
                             <div class="col-md-2">
@@ -145,11 +145,11 @@
 
                         <div class="row">
                             <div class="col-md-4">
-                                <input type="text" class="form-control" placeholder="Deseja remover algum ingediente?" id="Descrição" name="Descrição" />
+                                <input type="text" class="form-control" placeholder="Deseja remover algum ingediente?" id="Descricao" name="Descricao" />
                             </div>
 
                             <div class="col-md-4">
-                                <input type="text" class="form-control" placeholder="Digite o seu Endereço" id="Endereço" name="Endereço" />
+                                <input type="text" class="form-control" placeholder="Digite o seu Endereço" id="Endereco" name="Endereco" />
                             </div>
 
                             <div class="col-md-2">
@@ -157,8 +157,7 @@
                             </div>
 
                             <div class="col-md-2 d-flex justify-content-end">
-                                <h1 th:text="${mensagem}"></h1>
-                                <button type="submit" class="btn btn-marrom" value="meus-pedidos" onclick="cadastrarDespesa()">
+                                <button type="submit" class="btn btn-marrom" value="pedido-valor" onclick="cadastrarDespesa()">
                                     <i class="fas fa-plus text-white"></i>
                                 </button>
                             </div>
@@ -171,7 +170,7 @@
                         </div>
 
                         <div class="col-md-12 mt-3">
-                            <button class="btn btn-marrom btn-custom"><a href="meus-pedidos.html">Ver Pedidos anteriores</a></button>
+                            <button class="btn btn-marrom btn-custom"><a href="pedido">Ver Pedidos anteriores</a></button>
                         </div>
             <!-- Modal -->
             <div class="modal fade cor-texto" id="modalRegistraDespesa" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
